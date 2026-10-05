@@ -1,0 +1,82 @@
+old_market_name,old_market_value,old_district_group,new_market_id,new_market_name,new_district_id,new_district_name
+Agar,1381,Shajapur,1236,Agar APMC,328,Shajapur
+Akodiya,4204,Shajapur,3286,Akodiya APMC,328,Shajapur
+Akodiya(F&V),10509,Shajapur,4418,Akodiya(F&V) APMC,328,Shajapur
+Badod,2729,Shajapur,2353,Badod APMC,328,Shajapur
+Berachha,3050,Shajapur,2647,Berachha APMC,328,Shajapur
+Bercha(F&V),10528,Shajapur,,,,
+Kalapipal,2447,Shajapur,2103,Kalapipal APMC,328,Shajapur
+Kalapipal(F&V),10566,Shajapur,4475,Kalapipal(F&V) APMC,328,Shajapur
+Maksi,2712,Shajapur,2337,Maksi APMC,328,Shajapur
+Maksi(F&V),10591,Shajapur,4500,Maksi(F&V) APMC,328,Shajapur
+Momanbadodiya,2718,Shajapur,2342,Momanbadodiya APMC,328,Shajapur
+Momanbadodiya(F&V),10599,Shajapur,4508,Momanbadodiya(F&V) APMC,328,Shajapur
+Nalkehda,2458,Shajapur,,,,
+Shajapur,2440,Shajapur,2097,Shajapur APMC,328,Shajapur
+Shajapur(F&V),3885,Shajapur,3058,Shajapur(F&V) APMC,328,Shajapur
+Shujalpur,1128,Shajapur,1086,Shujalpur APMC,328,Shajapur
+Shujalpur(F&V),10635,Shajapur,4544,Shujalpur(F&V) APMC,328,Shajapur
+Soyatkalan,4210,Shajapur,3287,Soyatkalan APMC,287,Agar Malwa
+Susner,2723,Shajapur,2347,Susner APMC,287,Agar Malwa
+Agar(F&V),10508,Agar Malwa,4417,Agar(F&V) APMC,287,Agar Malwa
+Badod(F&V),10518,Agar Malwa,4427,Badod(F&V) APMC,287,Agar Malwa
+Nalkheda(F&V),10603,Agar Malwa,4512,Nalkheda(F&V) APMC,287,Agar Malwa
+Soyatkalan(F&V),10641,Agar Malwa,4550,Soyatkalan(F&V) APMC,287,Agar Malwa
+Susner(F&V),10642,Agar Malwa,4551,Susner(F&V) APMC,287,Agar Malwa
+Bagli,3135,Dewas,2728,Bagli APMC,301,Dewas
+Dewas,182,Dewas,174,Dewas APMC,301,Dewas
+Dewas(F&V),3881,Dewas,3054,Dewas(F&V) APMC,301,Dewas
+Haatpipliya,2721,Dewas,2345,Haatpipliya APMC,301,Dewas
+Hatpiplya(F&V),10554,Dewas,,,,
+Kannod,2445,Dewas,2101,Kannod APMC,301,Dewas
+Kannod(F&V),10567,Dewas,4476,Kannod(F&V) APMC,301,Dewas
+Khategaon,1378,Dewas,1233,Khategaon APMC,301,Dewas
+Khategaon(F&V),10576,Dewas,4485,Khategaon(F&V) APMC,301,Dewas
+Loharda,2695,Dewas,2320,Loharda APMC,301,Dewas
+Loharda(F&V),10586,Dewas,4495,Loharda(F&V) APMC,301,Dewas
+Sonkachh(F&V),10639,Dewas,,,,
+Sonkatch,1379,Dewas,1234,Sonkatch APMC,301,Dewas
+Gautampura,2457,Indore,2113,Gautampura APMC,308,Indore
+Gautampura(F&V),10549,Indore,4458,Gautampura(F&V) APMC,308,Indore
+Indore,3873,Indore,3046,Indore APMC,308,Indore
+Indore(F&V),187,Indore,179,Indore(F&V) APMC,308,Indore
+Mhow,819,Indore,,,,
+Mhow(F&V),10597,Indore,,,,
+Sanwer,2417,Indore,2074,Sanwer APMC,308,Indore
+Sanwer(F&V),10626,Indore,4535,Sanwer(F&V) APMC,308,Indore
+Javad,3134,Neemuch,2727,Javad APMC,318,Neemuch
+Jawad(F&V),10558,Neemuch,,,,
+Manasa,2455,Neemuch,2111,Manasa APMC,318,Neemuch
+Manasa(F&V),10593,Neemuch,4502,Manasa(F&V) APMC,318,Neemuch
+Neemuch,190,Neemuch,182,Neemuch APMC,318,Neemuch
+Neemuch(F&V),10606,Neemuch,4515,Neemuch(F&V) APMC,318,Neemuch
+Biaora,1834,Rajgarh,1660,Biaora APMC,321,Rajgarh
+Biaora(F&V),10533,Rajgarh,4442,Biaora(F&V) APMC,321,Rajgarh
+Chhapiheda,2726,Rajgarh,2350,Chhapiheda APMC,321,Rajgarh
+Jeerapur,2448,Rajgarh,2104,Jeerapur APMC,321,Rajgarh
+Jirapur(F&V),10562,Rajgarh,,,,
+Khilchipur,2702,Rajgarh,2327,Khilchipur APMC,321,Rajgarh
+Khujner,2724,Rajgarh,2348,Khujner APMC,321,Rajgarh
+Khujner(F&V),10579,Rajgarh,4488,Khujner(F&V) APMC,321,Rajgarh
+Kurawar,2698,Rajgarh,2323,Kurawar APMC,321,Rajgarh
+Machalpur,3047,Rajgarh,2644,Machalpur APMC,321,Rajgarh
+Machalpur(F&V),10587,Rajgarh,4496,Machalpur(F&V) APMC,321,Rajgarh
+Narsinghgarh,2429,Rajgarh,2086,Narsinghgarh APMC,321,Rajgarh
+Narsinghgarh(F&V),10604,Rajgarh,4513,Narsinghgarh(F&V) APMC,321,Rajgarh
+Pachaur,2428,Rajgarh,2085,Pachaur APMC,321,Rajgarh
+Pachaur(F&V),10609,Rajgarh,4518,Pachaur(F&V) APMC,321,Rajgarh
+Sarangpur,2709,Rajgarh,2334,Sarangpur APMC,321,Rajgarh
+Sarangpur(F&V),10627,Rajgarh,4536,Sarangpur(F&V) APMC,321,Rajgarh
+Suthalia,3059,Rajgarh,2656,Suthalia APMC,321,Rajgarh
+Badnagar,2425,Ujjain,2082,Badnagar APMC,335,Ujjain
+Badnagar(F&V),10517,Ujjain,4426,Badnagar(F&V) APMC,335,Ujjain
+Khaachrod(F&V),10572,Ujjain,,,,
+Khachrod,2708,Ujjain,2333,Khachrod APMC,335,Ujjain
+Mahidpur,1376,Ujjain,1231,Mahidpur APMC,335,Ujjain
+Mahidpur(F&V),10589,Ujjain,4498,Mahidpur(F&V) APMC,335,Ujjain
+Nagda,2463,Ujjain,2118,Nagda APMC,335,Ujjain
+Nagda(F&V),10602,Ujjain,4511,Nagda(F&V) APMC,335,Ujjain
+Tarana,1377,Ujjain,1232,Tarana APMC,335,Ujjain
+Tarana(F&V),10645,Ujjain,4554,Tarana(F&V) APMC,335,Ujjain
+Ujjain,197,Ujjain,186,Ujjain APMC,335,Ujjain
+Ujjain(F&V),3880,Ujjain,3053,Ujjain(F&V) APMC,335,Ujjain

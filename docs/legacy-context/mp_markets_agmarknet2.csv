@@ -1,0 +1,436 @@
+market_id,market_name,district_id,district_name
+4417,Agar(F&V) APMC,287,Agar Malwa
+4427,Badod(F&V) APMC,287,Agar Malwa
+2114,Nalkheda APMC,287,Agar Malwa
+4512,Nalkheda(F&V) APMC,287,Agar Malwa
+3287,Soyatkalan APMC,287,Agar Malwa
+4550,Soyatkalan(F&V) APMC,287,Agar Malwa
+2347,Susner APMC,287,Agar Malwa
+4551,Susner(F&V) APMC,287,Agar Malwa
+1228,Alirajpur APMC,288,Alirajpur
+3049,Alirajpur(F&V) APMC,288,Alirajpur
+2356,Jobat APMC,288,Alirajpur
+4472,Jobat(F&V) APMC,288,Alirajpur
+2729,Anuppur APMC,289,Anupur
+4424,Anuppur(F&V) APMC,289,Anupur
+3009,Jaithari APMC,289,Anupur
+3010,Kotma APMC,289,Anupur
+177,Ashoknagar APMC,290,Ashoknagar
+3061,Ashoknagar(F&V) APMC,290,Ashoknagar
+3666,Chanderi APMC,290,Ashoknagar
+2655,Isagarh APMC,290,Ashoknagar
+2262,Mungawali APMC,290,Ashoknagar
+4510,Mungawali(F&V) APMC,290,Ashoknagar
+2999,Piprai APMC,290,Ashoknagar
+2664,Shadora APMC,290,Ashoknagar
+2324,Anjad APMC,291,Badwani
+4423,Anjad(F&V) APMC,291,Badwani
+2119,Badwani APMC,291,Badwani
+4429,Badwani(F&V) APMC,291,Badwani
+2648,Balwadi APMC,291,Badwani
+4486,Khetia (F&V) APMC,291,Badwani
+2317,Khetia APMC,291,Badwani
+1091,Sendhwa APMC,291,Badwani
+4539,Sendhwa(F&V) APMC,291,Badwani
+1082,Balaghat APMC,292,Balaghat
+3074,Balaghat(F&amp;V) APMC,292,Balaghat
+2125,Katangi APMC,292,Balaghat
+4479,Katangi(F&V) APMC,292,Balaghat
+4482,Khairlangi (F&V) APMC,292,Balaghat
+3788,Khairlangi APMC,292,Balaghat
+3003,Lalbarra APMC,292,Balaghat
+4494,Lalbarra(F&V) APMC,292,Balaghat
+3004,Mohgaon APMC,292,Balaghat
+4507,Mohgaon(F&V) APMC,292,Balaghat
+3005,Paraswada APMC,292,Balaghat
+4521,Paraswada(F&V) APMC,292,Balaghat
+4559,Varaseoni (F&V) APMC,292,Balaghat
+2100,Varaseoni APMC,292,Balaghat
+531,Betul APMC,293,Betul
+4438,Betul(F&V) APMC,293,Betul
+4439,Bhensdehi (F&V) APMC,293,Betul
+2665,Bhensdehi APMC,293,Betul
+1226,Multai APMC,293,Betul
+4509,Multai(F&V) APMC,293,Betul
+2645,Alampur APMC,294,Bhind
+4419,Alampur(F&V) APMC,294,Bhind
+532,Bhind APMC,294,Bhind
+3063,Bhind(F&V) APMC,294,Bhind
+1238,Gohad APMC,294,Bhind
+4460,Gohad(F&V) APMC,294,Bhind
+2363,Lahar APMC,294,Bhind
+4492,Lahar(F&V) APMC,294,Bhind
+3001,Mehgaon APMC,294,Bhind
+4505,Mehgaon(F&V) APMC,294,Bhind
+2660,Mow APMC,294,Bhind
+1088,Berasia APMC,295,Bhopal
+172,Bhopal APMC,295,Bhopal
+173,Bhopal(F&V) APMC,295,Bhopal
+811,Burhanpur APMC,296,Burhanpur
+3052,Burhanpur(F&V) APMC,296,Burhanpur
+2110,Badamalhera APMC,297,Chhatarpur
+3780,Bakswaha APMC,297,Chhatarpur
+3779,Bijawar APMC,297,Chhatarpur
+4445,Chhatarpur (F&V) APMC,297,Chhatarpur
+789,Chhatarpur APMC,297,Chhatarpur
+2319,Harpalpur APMC,297,Chhatarpur
+1243,LavKush Nagar(Laundi) APMC,297,Chhatarpur
+3781,Naugaon APMC,297,Chhatarpur
+2352,Rajnagar APMC,297,Chhatarpur
+3789,Amarwda APMC,298,Chhindwara
+4448,Chaurai (F&V) APMC,298,Chhindwara
+1245,Chaurai APMC,298,Chhindwara
+517,Chhindwara APMC,298,Chhindwara
+3075,Chhindwara(F&V) APMC,298,Chhindwara
+541,Damoh APMC,299,Damoh
+3068,Damoh(F&V) APMC,299,Damoh
+2344,Hata APMC,299,Damoh
+2126,Javera APMC,299,Damoh
+1242,Patharia APMC,299,Damoh
+2649,Bhander APMC,300,Datia
+4440,Bhander(F&V) APMC,300,Datia
+542,Datia APMC,300,Datia
+4450,Datia(F&V) APMC,300,Datia
+2368,Sevda APMC,300,Datia
+2728,Bagli APMC,301,Dewas
+174,Dewas APMC,301,Dewas
+3054,Dewas(F&V) APMC,301,Dewas
+4463,Haatpipliya (F&V) APMC,301,Dewas
+2345,Haatpipliya APMC,301,Dewas
+2101,Kannod APMC,301,Dewas
+4476,Kannod(F&V) APMC,301,Dewas
+1233,Khategaon APMC,301,Dewas
+4485,Khategaon(F&V) APMC,301,Dewas
+2320,Loharda APMC,301,Dewas
+4495,Loharda(F&V) APMC,301,Dewas
+4548,Sonkatch (F&V) APMC,301,Dewas
+1234,Sonkatch APMC,301,Dewas
+2076,Badnawar APMC,302,Dhar
+3048,Badnawar(F&V) APMC,302,Dhar
+1083,Dhamnod APMC,302,Dhar
+4452,Dhamnod(F&V) APMC,302,Dhar
+518,Dhar APMC,302,Dhar
+3047,Dhar(F&V) APMC,302,Dhar
+2657,Gandhwani APMC,302,Dhar
+1227,Kukshi APMC,302,Dhar
+4491,Kukshi(F&V) APMC,302,Dhar
+2087,Manawar APMC,302,Dhar
+4503,Manawar(F&V) APMC,302,Dhar
+2318,Rajgarh APMC,302,Dhar
+4528,Rajgarh(F&V) APMC,302,Dhar
+1246,Dindori APMC,303,Dindori
+2358,Gorakhpur APMC,303,Dindori
+2762,Shahpura Niwas APMC,303,Dindori
+4415,Aron (F&V) APMC,304,Guna
+2099,Aron APMC,304,Guna
+2330,Binaganj APMC,304,Guna
+520,Guna APMC,304,Guna
+3060,Guna(F&V) APMC,304,Guna
+1237,Kumbhraj APMC,304,Guna
+2329,Maksudangarh APMC,304,Guna
+2659,Raghogarh APMC,304,Guna
+3776,Bhitarwar APMC,305,Gwalior
+178,Dabra APMC,305,Gwalior
+4449,Dabra(F&V) APMC,305,Gwalior
+521,Lashkar APMC,305,Gwalior
+3059,Lashkar(F&V) APMC,305,Gwalior
+1084,Harda APMC,306,Harda
+3045,Harda(F&V) APMC,306,Harda
+2080,Khirkiya APMC,306,Harda
+4487,Khirkiya(F&V) APMC,306,Harda
+3770,Sirali APMC,306,Harda
+4546,Sirali(F&V) APMC,306,Harda
+2078,Timarni APMC,306,Harda
+4557,Timarni(F&V) APMC,306,Harda
+2113,Gautampura APMC,308,Indore
+4458,Gautampura(F&V) APMC,308,Indore
+3046,Indore APMC,308,Indore
+179,Indore(F&V) APMC,308,Indore
+4506,Mhow (Ambedkar Nagar) (F&V) APMC,308,Indore
+790,Mhow (Ambedkar Nagar) APMC,308,Indore
+2074,Sanwer APMC,308,Indore
+4535,Sanwer(F&V) APMC,308,Indore
+535,Jabalpur APMC,309,Jabalpur
+3071,Jabalpur(F&V) APMC,309,Jabalpur
+4522,Paatan (F&V) APMC,309,Jabalpur
+3787,Paatan APMC,309,Jabalpur
+3070,Sehora (F&V) APMC,309,Jabalpur
+1608,Sehora APMC,309,Jabalpur
+3072,Shahpura Bhitoni (F&V) APMC,309,Jabalpur
+1244,Shahpura Bhitoni APMC,309,Jabalpur
+2115,Jhabua APMC,310,Jhabua
+4470,Jhabua(F&V) APMC,310,Jhabua
+1229,Petlawad APMC,310,Jhabua
+4523,Petlawad(F&V) APMC,310,Jhabua
+2096,Thandla APMC,310,Jhabua
+4555,Thandla(F&V) APMC,310,Jhabua
+180,Katni APMC,311,Katni
+3073,Katni(F&V) APMC,311,Katni
+2349,Harsood APMC,312,Khandwa
+523,Khandwa APMC,312,Khandwa
+3050,Khandwa(F&V) APMC,312,Khandwa
+3969,Mundi APMC,312,Khandwa
+2107,Pandhana APMC,312,Khandwa
+3051,Pandhana(F&V) APMC,312,Khandwa
+4428,Badwaha (F&V) APMC,313,Khargone
+2095,Badwaha APMC,313,Khargone
+3968,Bedia APMC,313,Khargone
+2079,Bhikangaon APMC,313,Khargone
+2321,Karhi APMC,313,Khargone
+2328,Kasrawad APMC,313,Khargone
+524,Khargone APMC,313,Khargone
+4484,Khargone(F&V) APMC,313,Khargone
+1230,Sanawad APMC,313,Khargone
+4534,Sanawad(F&V) APMC,313,Khargone
+2343,Segaon APMC,313,Khargone
+2641,Amarpatan APMC,749,Maihar
+4421,Amarpatan(F&V) APMC,749,Maihar
+2650,Maihar APMC,749,Maihar
+4499,Maihar(F&V) APMC,749,Maihar
+3007,Ramnagar APMC,749,Maihar
+4443,Bichhiya (F&V) APMC,314,Mandla
+2366,Krishi Upaj Mandi Samiti Bichhiya,314,Mandla
+791,Mandla APMC,314,Mandla
+4504,Mandla(F&V) APMC,314,Mandla
+2646,Nainpur APMC,314,Mandla
+3106,Bhanpura APMC,315,Mandsaur
+4441,Bhanpura(F&V) APMC,315,Mandsaur
+3773,Daloda APMC,315,Mandsaur
+3285,Garoth APMC,315,Mandsaur
+4457,Garoth(F&V) APMC,315,Mandsaur
+522,Mandsaur APMC,315,Mandsaur
+3055,Mandsaur(F&V) APMC,315,Mandsaur
+4525,Piplya (F&V) APMC,315,Mandsaur
+2336,Piplya APMC,315,Mandsaur
+2325,Shamgarh APMC,315,Mandsaur
+3056,Shamgarh(F&V) APMC,315,Mandsaur
+2662,Sitamau APMC,315,Mandsaur
+4547,Sitamau(F&V) APMC,315,Mandsaur
+2123,Suvasra APMC,315,Mandsaur
+4552,Suvasra(F&V) APMC,315,Mandsaur
+2364,Hanumana APMC,748,Mauganj
+4462,Hanumana(F&V) APMC,748,Mauganj
+4422,Ambaha (F&V) APMC,316,Morena
+2663,Ambaha APMC,316,Morena
+3777,Banmorkalan APMC,316,Morena
+3002,Jora APMC,316,Morena
+4473,Jora(F&V) APMC,316,Morena
+1239,Kailaras APMC,316,Morena
+4474,Kailaras(F&V) APMC,316,Morena
+530,Morena APMC,316,Morena
+3064,Morena(F&V) APMC,316,Morena
+2367,Porsa APMC,316,Morena
+3065,Porsa(F&V) APMC,316,Morena
+2121,Sabalgarh APMC,316,Morena
+4532,Sabalgarh(F&V) APMC,316,Morena
+3772,Babai (Makhan Nagar) APMC,307,Narmadapuram
+2077,Banapura APMC,307,Narmadapuram
+4433,Banapura(F&V) APMC,307,Narmadapuram
+2112,Bankhedi APMC,307,Narmadapuram
+519,Itarsi APMC,307,Narmadapuram
+4466,Itarsi(F&V) APMC,307,Narmadapuram
+4464,Narmadapuram (F&V) APMC,307,Narmadapuram
+2667,Narmadapuram APMC,307,Narmadapuram
+529,Pipariya APMC,307,Narmadapuram
+4524,Pipariya(F&V) APMC,307,Narmadapuram
+2109,Semriharchand APMC,307,Narmadapuram
+4454,Gadarwada (F&V) APMC,317,Narsinghpur
+2090,Gadarwada APMC,317,Narsinghpur
+2094,Gotegaon APMC,317,Narsinghpur
+4461,Gotegaon(F&V) APMC,317,Narsinghpur
+2081,Kareli APMC,317,Narsinghpur
+4477,Kareli(F&V) APMC,317,Narsinghpur
+533,Narsinghpur APMC,317,Narsinghpur
+4514,Narsinghpur(F&V) APMC,317,Narsinghpur
+2340,Tendukheda APMC,317,Narsinghpur
+4467,Javad (F&V) APMC,318,Neemuch
+2727,Javad APMC,318,Neemuch
+2111,Manasa APMC,318,Neemuch
+4502,Manasa(F&V) APMC,318,Neemuch
+182,Neemuch APMC,318,Neemuch
+4515,Neemuch(F&V) APMC,318,Neemuch
+2108,Niwadi APMC,750,Niwadi
+3069,Niwadi(F&V) APMC,750,Niwadi
+3786,Prithvipur APMC,750,Niwadi
+2075,Pandhurna APMC,747,Pandhurna
+3076,Pandhurna(F&V) APMC,747,Pandhurna
+4549,Saunsar (F&V) APMC,747,Pandhurna
+2089,Saunsar APMC,747,Pandhurna
+2357,Ajaygarh APMC,319,Panna
+2346,Devandranagar APMC,319,Panna
+788,Panna APMC,319,Panna
+4520,Panna(F&V) APMC,319,Panna
+3782,Pawai APMC,319,Panna
+3783,Simariya APMC,319,Panna
+2093,Bareli APMC,320,Raisen
+4434,Bareli(F&V) APMC,320,Raisen
+2106,Begamganj APMC,320,Raisen
+4436,Begamganj(F&V) APMC,320,Raisen
+2098,Gairatganj APMC,320,Raisen
+4455,Gairatganj(F&V) APMC,320,Raisen
+1661,Obedullaganj APMC,320,Raisen
+4517,Obedullaganj(F&V) APMC,320,Raisen
+534,Raisen APMC,320,Raisen
+4527,Raisen(F&V) APMC,320,Raisen
+3771,Silvani APMC,320,Raisen
+2091,Udaipura APMC,320,Raisen
+1660,Biaora APMC,321,Rajgarh
+4442,Biaora(F&V) APMC,321,Rajgarh
+2350,Chhapiheda APMC,321,Rajgarh
+4471,Jeerapur (F&V) APMC,321,Rajgarh
+2104,Jeerapur APMC,321,Rajgarh
+2327,Khilchipur APMC,321,Rajgarh
+2348,Khujner APMC,321,Rajgarh
+4488,Khujner(F&V) APMC,321,Rajgarh
+2323,Kurawar APMC,321,Rajgarh
+2644,Machalpur APMC,321,Rajgarh
+4496,Machalpur(F&V) APMC,321,Rajgarh
+2086,Narsinghgarh APMC,321,Rajgarh
+4513,Narsinghgarh(F&V) APMC,321,Rajgarh
+2085,Pachaur APMC,321,Rajgarh
+4518,Pachaur(F&V) APMC,321,Rajgarh
+2334,Sarangpur APMC,321,Rajgarh
+4536,Sarangpur(F&V) APMC,321,Rajgarh
+2656,Suthalia APMC,321,Rajgarh
+4420,A lot (F&V) APMC,322,Ratlam
+1235,A lot APMC,322,Ratlam
+4469,Jaora (F&V) APMC,322,Ratlam
+1085,Jaora APMC,322,Ratlam
+527,Ratlam APMC,322,Ratlam
+3057,Ratlam(F&V) APMC,322,Ratlam
+2088,Sailana APMC,322,Ratlam
+4533,Sailana(F&V) APMC,322,Ratlam
+2365,Taal APMC,322,Ratlam
+4553,Taal(F&V) APMC,322,Ratlam
+1247,Baikunthpur APMC,323,Rewa
+4430,Baikunthpur(F&V) APMC,323,Rewa
+4444,Chaakghat (F&V) APMC,323,Rewa
+2651,Chaakghat APMC,323,Rewa
+536,Rewa APMC,323,Rewa
+4531,Rewa(F&V) APMC,323,Rewa
+2338,Bamora APMC,324,Sagar
+2122,Banda APMC,324,Sagar
+2083,Bina APMC,324,Sagar
+4451,Deori (F&V) APMC,324,Sagar
+1241,Deori APMC,324,Sagar
+2117,Gadakota APMC,324,Sagar
+4453,Gadakota(F&V) APMC,324,Sagar
+3778,Jaisinagar APMC,324,Sagar
+2652,Kesli APMC,324,Sagar
+1240,Khurai APMC,324,Sagar
+4489,Khurai(F&V) APMC,324,Sagar
+3400,Malthone APMC,324,Sagar
+4501,Malthone(F&V) APMC,324,Sagar
+2335,Rahatgarh APMC,324,Sagar
+2116,Rehli APMC,324,Sagar
+4529,Rehli(F&V) APMC,324,Sagar
+525,Sagar APMC,324,Sagar
+3067,Sagar(F&V) APMC,324,Sagar
+2359,Shahagarh APMC,324,Sagar
+2092,Nagod APMC,325,Satna
+185,Satna APMC,325,Satna
+3079,Satna(F&V) APMC,325,Satna
+4416,Ashta (F&V) APMC,326,Sehore
+528,Ashta APMC,326,Sehore
+2666,Baktara APMC,326,Sehore
+4432,Baktara(F&V) APMC,326,Sehore
+4516,Bherunda (Nasrullaganj) (F&V) APMC,326,Sehore
+1659,Bherunda (Nasrullaganj) APMC,326,Sehore
+2642,Ichhawar APMC,326,Sehore
+4465,Ichhawar(F&V) APMC,326,Sehore
+3769,Jawar APMC,326,Sehore
+4468,Jawar(F&V) APMC,326,Sehore
+4530,Rehati (F&V) APMC,326,Sehore
+2322,Rehati APMC,326,Sehore
+526,Sehore APMC,326,Sehore
+4538,Sehore(F&V) APMC,326,Sehore
+2355,Shyampur APMC,326,Sehore
+3006,Barghat APMC,327,Seoni
+4435,Barghat(F&V) APMC,327,Seoni
+4446,Chhpara (F&V) APMC,327,Seoni
+2661,Chhpara APMC,327,Seoni
+4459,Ghansour (F&V) APMC,327,Seoni
+2653,Ghansour APMC,327,Seoni
+4480,Keolari (F&V) APMC,327,Seoni
+2120,Keolari APMC,327,Seoni
+2658,Lakhnadon APMC,327,Seoni
+3078,Lakhnadon(F&V) APMC,327,Seoni
+3790,Palari APMC,327,Seoni
+4519,Palari(F&V) APMC,327,Seoni
+537,Seoni APMC,327,Seoni
+4540,Seoni(F&V) APMC,327,Seoni
+1236,Agar APMC,328,Shajapur
+3286,Akodiya APMC,328,Shajapur
+4418,Akodiya(F&V) APMC,328,Shajapur
+2353,Badod APMC,328,Shajapur
+4437,Berachha (F&V) APMC,328,Shajapur
+2647,Berachha APMC,328,Shajapur
+2103,Kalapipal APMC,328,Shajapur
+4475,Kalapipal(F&V) APMC,328,Shajapur
+2337,Maksi APMC,328,Shajapur
+4500,Maksi(F&V) APMC,328,Shajapur
+2342,Momanbadodiya APMC,328,Shajapur
+4508,Momanbadodiya(F&V) APMC,328,Shajapur
+2097,Shajapur APMC,328,Shajapur
+3058,Shajapur(F&V) APMC,328,Shajapur
+1086,Shujalpur APMC,328,Shajapur
+4544,Shujalpur(F&V) APMC,328,Shajapur
+2351,Beohari APMC,329,Shehdol
+3008,Budhar APMC,329,Shehdol
+538,Shahdol APMC,329,Shehdol
+2326,Sheopurbadod APMC,330,Sheopur
+4542,Sheopurbadod(F&V) APMC,330,Sheopur
+3066,Sheopurkalan (F&V) APMC,330,Sheopur
+1087,Sheopurkalan APMC,330,Sheopur
+2654,Vijaypur APMC,330,Sheopur
+2331,Badarwas APMC,331,Shivpuri
+4425,Badarwas(F&V) APMC,331,Shivpuri
+4431,Barad (F&V) APMC,331,Shivpuri
+3775,Barad APMC,331,Shivpuri
+2339,Karera APMC,331,Shivpuri
+4478,Karera(F&V) APMC,331,Shivpuri
+4483,Khaniadhana (F&V) APMC,331,Shivpuri
+2124,Khaniadhana APMC,331,Shivpuri
+3000,Khatora APMC,331,Shivpuri
+2105,Kolaras APMC,331,Shivpuri
+4490,Kolaras(F&V) APMC,331,Shivpuri
+2361,Magroni APMC,331,Shivpuri
+4497,Magroni(F&V) APMC,331,Shivpuri
+2360,Pichhour APMC,331,Shivpuri
+4526,Pohari (F&V) APMC,331,Shivpuri
+2102,Pohari APMC,331,Shivpuri
+3774,Rannod APMC,331,Shivpuri
+539,Shivpuri APMC,331,Shivpuri
+3062,Shivpuri(F&V) APMC,331,Shivpuri
+792,Sidhi APMC,332,Sidhi
+2354,Singroli APMC,333,Singroli
+4545,Singroli(F&V) APMC,333,Singroli
+2362,Jatara APMC,334,Tikamgarh
+3784,Khargapur APMC,334,Tikamgarh
+3785,Palera APMC,334,Tikamgarh
+540,Tikamgarh APMC,334,Tikamgarh
+4556,Tikamgarh(F&V) APMC,334,Tikamgarh
+2082,Badnagar APMC,335,Ujjain
+4426,Badnagar(F&V) APMC,335,Ujjain
+4481,Khachrod (F&V) APMC,335,Ujjain
+2333,Khachrod APMC,335,Ujjain
+1231,Mahidpur APMC,335,Ujjain
+4498,Mahidpur(F&V) APMC,335,Ujjain
+2118,Nagda APMC,335,Ujjain
+4511,Nagda(F&V) APMC,335,Ujjain
+1232,Tarana APMC,335,Ujjain
+4554,Tarana(F&V) APMC,335,Ujjain
+186,Ujjain APMC,335,Ujjain
+3053,Ujjain(F&V) APMC,335,Ujjain
+2341,Unhel APMC,335,Ujjain
+4558,Unhel(F&V) APMC,335,Ujjain
+1248,Umariya APMC,336,Umariya
+187,Ganjbasoda APMC,337,Vidisha
+4456,Ganjbasoda(F&V) APMC,337,Vidisha
+2998,Gulabganj APMC,337,Vidisha
+2369,Kurwai APMC,337,Vidisha
+2643,Lateri APMC,337,Vidisha
+2332,Shamshabad APMC,337,Vidisha
+2084,Sironj APMC,337,Vidisha
+188,Vidisha APMC,337,Vidisha
+4560,Vidisha(F&V) APMC,337,Vidisha

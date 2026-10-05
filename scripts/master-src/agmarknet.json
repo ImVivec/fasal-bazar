@@ -1,0 +1,619 @@
+{
+ "fetchedAt": "2026-10-04T09:14:02.844Z",
+ "markets": [
+  {
+   "id": 174,
+   "name": "Dewas APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 179,
+   "name": "Indore(F&V) APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 182,
+   "name": "Neemuch APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 186,
+   "name": "Ujjain APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 268,
+   "name": "Kota APMC",
+   "district": 508,
+   "state": 29
+  },
+  {
+   "id": 633,
+   "name": "Jhalarapatan APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 634,
+   "name": "Ramganjmandi APMC",
+   "district": 508,
+   "state": 29
+  },
+  {
+   "id": 790,
+   "name": "Mhow (Ambedkar Nagar) APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 1086,
+   "name": "Shujalpur APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 1231,
+   "name": "Mahidpur APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 1232,
+   "name": "Tarana APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 1233,
+   "name": "Khategaon APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 1234,
+   "name": "Sonkatch APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 1236,
+   "name": "Agar APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 1401,
+   "name": "Bhawani Mandi APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 1403,
+   "name": "Iklera APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 1404,
+   "name": "Itawa APMC",
+   "district": 508,
+   "state": 29
+  },
+  {
+   "id": 1405,
+   "name": "Khanpur APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 1660,
+   "name": "Biaora APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2074,
+   "name": "Sanwer APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 2082,
+   "name": "Badnagar APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 2085,
+   "name": "Pachaur APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2086,
+   "name": "Narsinghgarh APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2097,
+   "name": "Shajapur APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2101,
+   "name": "Kannod APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 2103,
+   "name": "Kalapipal APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2104,
+   "name": "Jeerapur APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2111,
+   "name": "Manasa APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 2113,
+   "name": "Gautampura APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 2114,
+   "name": "Nalkheda APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 2118,
+   "name": "Nagda APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 2320,
+   "name": "Loharda APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 2323,
+   "name": "Kurawar APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2327,
+   "name": "Khilchipur APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2333,
+   "name": "Khachrod APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 2334,
+   "name": "Sarangpur APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2337,
+   "name": "Maksi APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2341,
+   "name": "Unhel APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 2342,
+   "name": "Momanbadodiya APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2345,
+   "name": "Haatpipliya APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 2347,
+   "name": "Susner APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 2348,
+   "name": "Khujner APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2350,
+   "name": "Chhapiheda APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2353,
+   "name": "Badod APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2481,
+   "name": "Kota (F&V) APMC",
+   "district": 508,
+   "state": 29
+  },
+  {
+   "id": 2644,
+   "name": "Machalpur APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2647,
+   "name": "Berachha APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 2656,
+   "name": "Suthalia APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 2727,
+   "name": "Javad APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 2728,
+   "name": "Bagli APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 2751,
+   "name": "Choumahla APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 3046,
+   "name": "Indore APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 3053,
+   "name": "Ujjain(F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 3054,
+   "name": "Dewas(F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 3058,
+   "name": "Shajapur(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 3286,
+   "name": "Akodiya APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 3287,
+   "name": "Soyatkalan APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 3592,
+   "name": "Manohararthana APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 3890,
+   "name": "Dag APMC",
+   "district": 502,
+   "state": 29
+  },
+  {
+   "id": 4395,
+   "name": "Khatauli APMC",
+   "district": 508,
+   "state": 29
+  },
+  {
+   "id": 4417,
+   "name": "Agar(F&V) APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 4418,
+   "name": "Akodiya(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4426,
+   "name": "Badnagar(F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 4427,
+   "name": "Badod(F&V) APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 4437,
+   "name": "Berachha (F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4442,
+   "name": "Biaora(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4458,
+   "name": "Gautampura(F&V) APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 4463,
+   "name": "Haatpipliya (F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 4467,
+   "name": "Javad (F&V) APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 4471,
+   "name": "Jeerapur (F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4475,
+   "name": "Kalapipal(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4476,
+   "name": "Kannod(F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 4481,
+   "name": "Khachrod (F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 4485,
+   "name": "Khategaon(F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 4488,
+   "name": "Khujner(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4495,
+   "name": "Loharda(F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 4496,
+   "name": "Machalpur(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4498,
+   "name": "Mahidpur(F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 4500,
+   "name": "Maksi(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4502,
+   "name": "Manasa(F&V) APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 4506,
+   "name": "Mhow (Ambedkar Nagar) (F&V) APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 4508,
+   "name": "Momanbadodiya(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4511,
+   "name": "Nagda(F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 4512,
+   "name": "Nalkheda(F&V) APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 4513,
+   "name": "Narsinghgarh(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4515,
+   "name": "Neemuch(F&V) APMC",
+   "district": 318,
+   "state": 19
+  },
+  {
+   "id": 4518,
+   "name": "Pachaur(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4535,
+   "name": "Sanwer(F&V) APMC",
+   "district": 308,
+   "state": 19
+  },
+  {
+   "id": 4536,
+   "name": "Sarangpur(F&V) APMC",
+   "district": 321,
+   "state": 19
+  },
+  {
+   "id": 4544,
+   "name": "Shujalpur(F&V) APMC",
+   "district": 328,
+   "state": 19
+  },
+  {
+   "id": 4548,
+   "name": "Sonkatch (F&V) APMC",
+   "district": 301,
+   "state": 19
+  },
+  {
+   "id": 4550,
+   "name": "Soyatkalan(F&V) APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 4551,
+   "name": "Susner(F&V) APMC",
+   "district": 287,
+   "state": 19
+  },
+  {
+   "id": 4554,
+   "name": "Tarana(F&V) APMC",
+   "district": 335,
+   "state": 19
+  },
+  {
+   "id": 4558,
+   "name": "Unhel(F&V) APMC",
+   "district": 335,
+   "state": 19
+  }
+ ],
+ "commodities": {
+  "1": "Wheat",
+  "2": "Paddy(Common)",
+  "4": "Maize",
+  "5": "Jowar(Sorghum)",
+  "6": "Bengal Gram(Gram)(Whole)",
+  "8": "Black Gram(Urd Beans)(Whole)",
+  "9": "Green Gram(Moong)(Whole)",
+  "10": "Groundnut",
+  "11": "Sesamum(Sesame,Gingelly,Til)",
+  "12": "Mustard",
+  "13": "Soyabean",
+  "18": "Orange",
+  "23": "Onion",
+  "24": "Potato",
+  "25": "Garlic",
+  "26": "Chili Red",
+  "27": "Ginger(Dry)",
+  "29": "Barley(Jau)",
+  "31": "Cauliflower",
+  "32": "Brinjal",
+  "39": "Coriander(Leaves)",
+  "42": "Methi(Leaves)",
+  "43": "Methi Seeds",
+  "45": "Red gram/Arhar/Tur(whole)",
+  "46": "Green Peas",
+  "52": "Lentil(Masur)(Whole)",
+  "56": "Linseed",
+  "65": "Tomato",
+  "67": "Bitter gourd",
+  "68": "Bottle gourd",
+  "71": "Bhindi(Ladies Finger)",
+  "73": "Green Chilli",
+  "92": "Corriander seed",
+  "115": "Ajwan",
+  "126": "Cabbage",
+  "212": "Isabgul(Psyllium)",
+  "309": "Kabuli Chana(Chickpeas-White)",
+  "350": "poppy seeds",
+  "353": "nigella",
+  "372": "Ashwagandha",
+  "374": "nigella seeds",
+  "434": "Asgand"
+ }
+}

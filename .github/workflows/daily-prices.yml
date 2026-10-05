@@ -1,0 +1,44 @@
+# Daily mandi prices: Agmarknet -> MongoDB `days` (+ `months` on the 1st). See src/lib/ingest.ts.
+
+# Repo settings needed (Settings → Secrets and variables → Actions):
+# Secrets:  MONGODB_URI    (required)
+#          CRON_SECRET    (optional; same value as on Vercel, used to refresh the site's pages)
+# Variables: APP_URL       (optional; e.g. https://fasal-bazar.vercel.app)
+#            MONGODB_DB    (optional; default fasal_bazar)
+
+name: Daily mandi prices
+
+on:
+  schedule:
+    - cron: '30 13 * * *'  # 19:00 IST: today's prices
+    - cron: '30 2 * * *'   # 08:00 IST: late reports for the last 3 days
+  workflow_dispatch: {}    # "Run workflow" button for manual runs
+
+concurrency:
+  group: daily-prices
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Fetch and store prices
+        run: npm run daily
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_DB: ${{ vars.MONGODB_DB }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          APP_URL: ${{ vars.APP_URL }}

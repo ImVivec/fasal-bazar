@@ -11,9 +11,10 @@ export type DailyDoc = { _id: string; m: Record<string, [number, number, number,
 
 /**
  * monthly: one doc per (crop, completed month). _id "cropId:YYYY-MM".
- *   m { marketId: [avg modal, days reported] }. Written once, after the month is over.
+ *   m { marketId: [avg modal, days reported, arrivals tonnes] }. Written once, after the month is over.
+ *   (The arrivals total was added 2026-10-07; every summary was recomputed from `daily`.)
  */
-export type MonthlyDoc = { _id: string; m: Record<string, [number, number]> };
+export type MonthlyDoc = { _id: string; m: Record<string, [number, number, number?]> };
 
 /** Legacy (district-keyed) shapes, read only by scripts/convert-days.ts until they are dropped. */
 export type LegacyDayDoc = { _id: string; c: Record<string, Record<string, [number, number, number, number]>> };
@@ -41,7 +42,9 @@ export type MetaDoc = {
   cropWatch?: Record<string, { name: string; firstSeen: string; lastSeen: string; days: number }>;
   msp?: Record<string, number>; // cropId -> ₹/quintal
   latest?: Record<string, string>; // cropId -> latest reported date
-  monthSummaryUpTo?: string; // YYYY-MM: `months` summaries exist up to and including this month
+  monthSummaryUpTo?: string; // YYYY-MM: `monthly` summaries exist up to and including this month
+  /** YYYY-MM-DD: every day up to here was fetched OK by the daily job (outage catch-up starts after it). */
+  fetchedThrough?: string | null;
 };
 
 /**

@@ -9,7 +9,7 @@
 // with a pause (~1.6 s response + 1 s gap ≈ 23 calls/min).
 import 'server-only';
 import { fetchDay, fetchMarketList, fetchMsp, HttpError, type DayReport } from './agmarknet';
-import { activeSummary, addDays, addMonths, buildDailyOps, buildMonthlyOps, cropRange, dailyPlan, marketWatchDiff, mergeCropWatch } from './ingest-core';
+import { activeSummary, addDays, addMonths, advanceFetchedThrough, buildDailyOps, buildMonthlyOps, cropRange, dailyPlan, marketWatchDiff, mergeCropWatch } from './ingest-core';
 import { cols } from './db';
 import { CROPS, DISTRICTS, MARKETS } from './master';
 import { todayIST } from './dates';
@@ -75,6 +75,8 @@ export type DailyResult = {
   newMarkets: { id: number; name: string; district: number }[];
   missingMarkets: number[];
   renamedMarkets: { id: number; code: string; agm: string }[];
+  /** Outage longer than the catch-up limit: days before this date were not fetched (run a backfill). */
+  gapBefore: string | null;
   ok: boolean;
   ms: number;
 };
@@ -86,8 +88,9 @@ export async function runDaily(opts: { gapMs?: number; retries?: number; retryWa
   const { meta } = await cols();
   const m0 = await meta.findOne({ _id: 'agmarknet' });
   const today = todayIST();
-  const plan = dailyPlan(today, m0?.monthSummaryUpTo ?? addMonths(today.slice(0, 7), -1));
-  const res: DailyResult = { today, dates: [], failed: [], summarized: [], newMarkets: [], missingMarkets: [], renamedMarkets: [], ok: false, ms: 0 };
+  const plan = dailyPlan(today, m0?.monthSummaryUpTo ?? addMonths(today.slice(0, 7), -1), m0?.fetchedThrough ?? null);
+  const res: DailyResult = { today, dates: [], failed: [], summarized: [], newMarkets: [], missingMarkets: [], renamedMarkets: [], gapBefore: plan.gapBefore, ok: false, ms: 0 };
+  log(`fetching ${plan.dates[0]} → ${today} (${plan.dates.length} days)${plan.gapBefore ? `; outage longer than the catch-up limit: days before ${plan.gapBefore} need \`npm run backfill\`` : ''}`);
   const set: Record<string, unknown> = {};
 
   // 1) Market watch: compare Agmarknet's mandi list for our districts with the code list.
@@ -102,7 +105,8 @@ export async function runDaily(opts: { gapMs?: number; retries?: number; retryWa
     log(`market watch failed: ${e instanceof Error ? e.message : e}`);
   }
 
-  // 2) Prices for today and the late-report window (oldest first, so the crop watch counts days right).
+  // 2) Prices: the correction window (7 days) or, after an outage, everything since the last good day
+  //    (oldest first, so the crop watch counts days right).
   const ids = await watchedMarketIds();
   let cropWatch = m0?.cropWatch ?? {};
   for (const [i, date] of plan.dates.entries()) {
@@ -143,7 +147,8 @@ export async function runDaily(opts: { gapMs?: number; retries?: number; retryWa
       ...set,
       lastRunAt: now,
       failed: res.failed,
-      lastError: res.ok ? null : `${res.failed.length} of ${plan.dates.length} days failed`,
+      lastError: res.ok ? (plan.gapBefore ? `gap before ${plan.gapBefore}: run a backfill` : null) : `${res.failed.length} of ${plan.dates.length} days failed`,
+      fetchedThrough: advanceFetchedThrough(m0?.fetchedThrough ?? null, plan.dates, res.failed),
       ...(res.dates.length ? { lastOkAt: now } : {}),
       ...(latestDate ? { latestDate } : {}),
     },

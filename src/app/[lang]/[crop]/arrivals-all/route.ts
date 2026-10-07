@@ -1,10 +1,10 @@
-// Arrivals tab data for one crop (weekly tonnes + price per mandi), loaded only when the tab is
-// opened. Language-neutral (names are filled in on the phone); static per (lang, crop) like /history.
+// "All years" range of the Arrivals tab: month-by-month arrivals and average price per mandi, from the
+// monthly summaries. Separate from /arrivals because it's ~5× bigger and only needed when that range is picked.
 import { CROPS } from '@/lib/master';
-import { getCropArrivals } from '@/lib/prices';
+import { getCropMonthlyArrivals } from '@/lib/prices';
 import { LANGS } from '@/lib/session';
 
-export const revalidate = 3600; // rebuild at most hourly, on the next visit after new data
+export const revalidate = 3600;
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -15,5 +15,5 @@ export async function GET(_req: Request, { params }: { params: Promise<{ lang: s
   const { crop } = await params;
   const c = CROPS.find((x) => x.slug === crop);
   if (!c) return Response.json({ error: 'not found' }, { status: 404 });
-  return Response.json(await getCropArrivals(c.id));
+  return Response.json(await getCropMonthlyArrivals(c.id));
 }

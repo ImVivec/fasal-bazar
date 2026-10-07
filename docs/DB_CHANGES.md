@@ -202,3 +202,30 @@ typed on the number keypad.
   old format and can't log in with mobile + PIN. Create the admin again with `npm run admin:create` (mobile +
   6–8 digit PIN). The old doc can then be deleted, on approval.
 - The test database `fasal_bazar_test` gained 2 test accounts in the new format (9000000009 admin, 9000000002 farmer).
+
+**Phase B backfill (finished 2026-10-04):** every day from 2025-08-31 back to 2016-01-01 (3,531 days), all 40 crops
+and 95 mandis. 93,234 docs written, 116 monthly summaries, about 2 h 21 min, 0 errors or rate-limit blocks.
+Totals now: `daily` 147,230 docs (46 MB data, 24 MB on disk), `monthly` 6,067 docs (1.9 MB).
+
+## 2026-10-06: daily job — 7-day correction window, outage catch-up, no refresh call
+
+- **`meta.fetchedThrough: "YYYY-MM-DD"`** (new field): the last date up to which every day was fetched OK.
+  Each run fetches from `min(today − 7, fetchedThrough + 1)` to today, capped at 45 days; it only advances past
+  days that succeeded, so a failed day is retried next run. Outages longer than 45 days set `lastError` and a
+  GitHub warning (`gapBefore`) and need a manual backfill.
+- **Correction window 2 → 7 days:** late uploads and corrections within a week are picked up (the first run
+  on 2026-10-06 updated 32 docs for 2–3 Oct that the 2-day window would have missed). About 8 calls per run.
+- No collection, index or document-shape changes. Writes stay idempotent `$set` per mandi.
+- Removed the `/api/revalidate` call; pages now rebuild at most hourly (`revalidate = 3600`).
+
+## 2026-10-07: monthly summaries carry the arrivals total
+
+- **Shape:** each `monthly.m.<marketId>` entry goes from `[avgModal, daysReported]` to
+  `[avgModal, daysReported, arrivalsTonnes]` (sum of that mandi's daily arrivals for the month, 2 decimals).
+- **Why:** the Arrivals tab's "All years" range shows month-by-month arrivals and price back to 2016 (2002 for
+  the original crops) without reading years of `daily` docs (1 extra `_id`-range read of ~130 small docs per crop page).
+- **Migration:** `npm run recompute:monthly` rebuilt all 6,067 completed-month docs from `daily` (Mongo only, no
+  Agmarknet calls). Check: 0 mandi-months changed average or day count. The daily job writes the third value for
+  new months automatically. Readers treat a missing third value as 0 t.
+- **Storage:** one more number per mandi-month, roughly +0.3 MB on `monthly` (was 1.9 MB). No new collections,
+  indexes or documents.

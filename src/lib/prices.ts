@@ -4,7 +4,7 @@ import { cols } from './db';
 import { addDays, cropRange } from './ingest-core';
 import { shapeCropView, type MarketInfo } from './prices-core';
 import { analyzeCrop, type Analysis } from './analysis-core';
-import { shapeArrivals } from './arrivals-core';
+import { shapeArrivals, shapeMonthlyArrivals } from './arrivals-core';
 import { DISTRICTS, MARKETS } from './master';
 import { todayIST, toDay } from './dates';
 
@@ -54,12 +54,19 @@ export async function getCropAnalysis(cropId: number, lang: 'en' | 'hi') {
   return { variants, msp };
 }
 
-/** Arrivals tab: weekly arrivals per mandi for about a year, plus the last 30 days' totals. */
+const districtOf = (id: number) => MARKET.en.get(id)?.d;
+
+/** Arrivals tab: weekly arrivals per mandi for about a year and the last 30 days' totals. */
 export async function getCropArrivals(cropId: number) {
   const today = todayIST();
   const { daily } = await cols();
-  const docs = await daily.find(cropRange(cropId, addDays(today, -LOOKBACK_DAYS), today)).toArray();
-  return shapeArrivals(docs, (id) => MARKET.en.get(id)?.d);
+  return shapeArrivals(await daily.find(cropRange(cropId, addDays(today, -LOOKBACK_DAYS), today)).toArray(), districtOf);
+}
+
+/** Arrivals tab, "All years": month-by-month arrivals and price per mandi from the monthly summaries. */
+export async function getCropMonthlyArrivals(cropId: number) {
+  const { monthly } = await cols();
+  return shapeMonthlyArrivals(await monthly.find(cropRange(cropId, '2000-01', todayIST().slice(0, 7))).toArray(), districtOf);
 }
 
 /** Crop picker: per-crop activity summary (refreshed by the daily job). */

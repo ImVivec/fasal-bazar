@@ -31,7 +31,7 @@ list automatically.
 GitHub Actions (19:00 + 08:00 IST) ─► npm run daily ─► api.agmarknet.gov.in market-wise daily report
                                            │            (1 call = 1 date × every crop × every mandi)
                                            ▼
-                  MongoDB `daily` (+ `monthly`, `meta`) ─► static pages (ISR) ◄─ /api/revalidate
+                  MongoDB `daily` (+ `monthly`, `meta`) ─► static pages (ISR, rebuilt at most hourly)
 ```
 
 - **Source:** Agmarknet 2.0's public *Market-wise, Commodity-wise Daily Report*
@@ -45,15 +45,16 @@ GitHub Actions (19:00 + 08:00 IST) ─► npm run daily ─► api.agmarknet.gov
   - `users`: accounts.
 
   Names, Hindi labels, groups and districts live in code (`src/lib/master.ts`), linked by Agmarknet IDs.
-- **Daily job:** fetches today plus 2 days back for late reports (3 calls), the mandi list (1 call) and MSPs (1 call).
-  It writes about 25–37 new docs per date and writes last month's summary once on the 1st. It refreshes the
-  crop picker data and flags new, missing or renamed mandis. New mandis' prices are stored immediately; add
-  them to `gen-master.ts` with a Hindi name to show them in the app.
+- **Daily job:** each run re-fetches the **last 7 days** (late uploads and corrections) and, after an outage,
+  catches up from the last fully fetched day (`meta.fetchedThrough`), up to 45 days back; a longer outage is
+  flagged on the run page and needs `npm run backfill`. It also downloads the mandi list and MSPs, writes last
+  month's summary once on the 1st, refreshes the crop picker data, and flags new, missing or renamed mandis
+  (their prices are stored immediately; add them to `gen-master.ts` with a Hindi name to show them in the app).
 - **Data quirk:** Agmarknet files coriander seed from grain mandis under "Coriander (Leaves)" and labels
   real leaves "per bundle" although they're priced per quintal. The parser corrects both, so every crop is ₹/quintal.
 - **Rate limit:** Agmarknet returns HTTP 429 for about 5 minutes after a burst, so calls are sequential with a 1 s pause.
-- **Pages** are static per language and crop (2 × 40 crop pages + 2 × 40 analysis pages). District
-  filtering happens in the browser. A page re-renders after the daily job marks it stale. Chart data is
+- **Pages** are static per language and crop. District filtering happens in the browser. Pages rebuild at
+  most once an hour (on the next visit), so new prices show up within an hour of the daily job. Chart data is
   served separately (`/<crop>/history`, `/<crop>/arrivals`, also static) and fetched only when shown.
 - **Auth:** `src/proxy.ts` checks a signed session cookie on every page (no DB call) and serves the user's
   language at the same URL. Accounts need admin approval. Login is mobile + PIN (hashed with scrypt; 5 wrong tries lock it for 30 min). A daily
@@ -78,6 +79,7 @@ npm run dev
 | `npm run gen:master [-- --refresh]` | Regenerate crops/districts/mandis; `--refresh` re-downloads Agmarknet's master list |
 | `npm run db:setup` | Create collections (idempotent) and print stats |
 | `npm run convert` | One-time: legacy district-keyed `days`/`months` → `daily`/`monthly` (done 2026-10-04) |
+| `npm run recompute:monthly` | Rebuild all completed-month summaries from `daily` (Mongo only; idempotent; `-- --dry` to preview). Ran 2026-10-07 to add arrivals totals |
 | `npm run admin:create` | Create or reset an admin account (mobile + 6–8 digit PIN) |
 | `python3 scripts/crop-photos.py [slug…]` | Re-download crop photos from Wikimedia Commons (choices and crop boxes are listed in the script) |
 | `npm test` | Unit tests (parser fixtures, shaping, analysis, auth) |
@@ -87,7 +89,7 @@ npm run dev
 | `MONGODB_URI` | yes | Atlas connection string (server-only) |
 | `MONGODB_DB` | no | Database name, default `fasal_bazar` |
 | `AUTH_SECRET` | yes | Signs login cookies, 32+ random characters. Changing it logs everyone out. |
-| `CRON_SECRET` | yes (prod) | Protects `/api/revalidate` and `/api/ingest` for scripts. Same value in Vercel and GitHub. |
+| `CRON_SECRET` | optional | Lets scripts call `/api/ingest` (the admin "Refresh prices now" button uses the admin login instead). |
 
 ## Adding a district, mandi or crop
 - **District:** add it to `DISTRICTS` in `scripts/gen-master.ts`, run `npm run gen:master -- --refresh`, add
@@ -98,8 +100,7 @@ npm run dev
 ## History (backfill phases)
 - **Converted:** the 11 original crops in MP, 2002 → today (no API calls).
 - **Phase A (done):** Sep 2025 → today, all 40 crops, all 95 mandis.
-- **Phase B (later):** 2016 → Aug 2025, in yearly chunks of ~16 min, for example
-  `npm run backfill -- --from=2025-08-31 --until=2025-01-01`.
+- **Phase B (done):** Jan 2016 → Aug 2025, all 40 crops, all 95 mandis.
 - **Phase C:** 2002–2015, skipped (very sparse).
 
 ## Triggering a refresh
@@ -109,12 +110,12 @@ npm run dev
 
 ## GitHub Actions (daily job)
 The repo is public, so Actions minutes are free. In Settings → Secrets and variables → Actions, add the secret
-`MONGODB_URI` (required), `CRON_SECRET` (to refresh the site's pages) and the variable `APP_URL`.
+`MONGODB_URI` (and the variable `MONGODB_DB` only if it isn't `fasal_bazar`).
 Atlas → Network Access must allow `0.0.0.0/0`. Mandi changes appear as warnings on the run page.
 GitHub pauses scheduled workflows in public repos after 60 days without commits; re-enable them from the Actions tab.
 
 ## Deploying to Vercel (Hobby)
-1. Import the repo. Set `MONGODB_URI`, `AUTH_SECRET`, `CRON_SECRET` (and `MONGODB_DB` if needed).
+1. Import the repo. Set `MONGODB_URI`, `AUTH_SECRET` (and `MONGODB_DB` if needed).
 2. Atlas → Network Access: allow `0.0.0.0/0`.
 3. Deploy. `vercel.json` pins functions to `bom1` (Mumbai).
 4. Run `npm run db:setup` and `npm run admin:create` once against the production DB.
@@ -123,5 +124,4 @@ GitHub pauses scheduled workflows in public repos after 60 days without commits;
 - "Near me": distance-based mandi lists (needs mandi coordinates)
 - More districts and states (after the pilot)
 - Read-aloud (Hindi), WhatsApp share, add-to-home-screen/offline
-- Phase B history (2016 → Aug 2025)
 - Forgot-password self-service; instant logout on block

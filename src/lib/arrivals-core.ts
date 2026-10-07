@@ -12,6 +12,13 @@ export type ArrivalsData = {
   recent: { from: string; to: string; t: Record<string, number> };
 };
 
+export type MonthlyArrivals = {
+  /** 1st of each month (days since epoch), oldest first. */
+  months: number[];
+  /** Per mandi, aligned with `months`: tonnes that month, and the month's average modal price (null = none). */
+  mandis: { id: number; d: number; t: number[]; p: (number | null)[] }[];
+};
+
 /** Monday on or before `day` (day 0, 1 Jan 1970, was a Thursday). */
 export const weekOf = (day: number) => day - ((day + 3) % 7);
 
@@ -63,11 +70,39 @@ export function shapeArrivals(docs: DailyDoc[], districtOf: (id: number) => numb
   return { weeks, mandis, recent: { from: fromDay(recentFrom), to: fromDay(latest), t: recent } };
 }
 
-/** Sum the mandis kept by `keep` into one weekly series (tonnes, and arrival-weighted price). */
-export function totalByWeek(data: ArrivalsData, keep: (m: ArrivalsData['mandis'][number]) => boolean) {
-  const t = data.weeks.map(() => 0);
-  const pt = data.weeks.map(() => 0);
-  for (const m of data.mandis) {
+/** Month-by-month arrivals and prices per mandi from `monthly` docs ("cropId:YYYY-MM"). */
+export function shapeMonthlyArrivals(docs: { _id: string; m?: Record<string, unknown> }[], districtOf: (id: number) => number | undefined): MonthlyArrivals {
+  const yms = [...new Set(docs.map((d) => d._id.slice(d._id.indexOf(':') + 1)).filter((ym) => /^\d{4}-\d{2}$/.test(ym)))].sort();
+  const idx = new Map(yms.map((ym, i) => [ym, i]));
+  const acc = new Map<number, { t: number[]; p: (number | null)[] }>();
+  for (const doc of docs) {
+    const i = idx.get(doc._id.slice(doc._id.indexOf(':') + 1));
+    if (i === undefined) continue;
+    for (const [k, v] of Object.entries(doc.m ?? {})) {
+      if (!Array.isArray(v) || !(Number(v[0]) > 0)) continue;
+      const id = Number(k);
+      if (districtOf(id) === undefined) continue; // not in the code list (yet)
+      let a = acc.get(id);
+      if (!a) acc.set(id, (a = { t: yms.map(() => 0), p: yms.map(() => null) }));
+      a.t[i] = round1(Number(v[2]) > 0 ? Number(v[2]) : 0);
+      a.p[i] = Math.round(Number(v[0]));
+    }
+  }
+  return {
+    months: yms.map((ym) => toDay(`${ym}-01`)),
+    mandis: [...acc].map(([id, a]) => ({ id, d: districtOf(id)!, t: a.t, p: a.p })).sort((a, b) => a.id - b.id),
+  };
+}
+
+/** Sum the mandis kept by `keep` into one series (tonnes, and arrival-weighted price). Works for weeks or months. */
+export function totalSeries(
+  length: number,
+  mandis: { id: number; d: number; t: number[]; p: (number | null)[] }[],
+  keep: (m: { id: number; d: number }) => boolean,
+) {
+  const t = Array.from({ length }, () => 0);
+  const pt = Array.from({ length }, () => 0);
+  for (const m of mandis) {
     if (!keep(m)) continue;
     m.t.forEach((v, i) => {
       t[i] += v;
@@ -76,3 +111,7 @@ export function totalByWeek(data: ArrivalsData, keep: (m: ArrivalsData['mandis']
   }
   return { t: t.map(round1), p: t.map((v, i) => (v > 0 ? Math.round(pt[i] / v) : null)) };
 }
+
+/** Weekly totals (kept for the existing callers). */
+export const totalByWeek = (data: ArrivalsData, keep: (m: { id: number; d: number }) => boolean) =>
+  totalSeries(data.weeks.length, data.mandis, keep);

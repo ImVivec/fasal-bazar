@@ -14,7 +14,8 @@
     "backfill": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/backfill.ts",
     "admin:create": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/create-admin.ts",
     "daily": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/daily.ts",
-    "convert": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/convert-days.ts"
+    "convert": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/convert-days.ts",
+    "recompute:monthly": "tsx --conditions=react-server --env-file-if-exists=.env.local scripts/recompute-monthly.ts"
   },
   "dependencies": {
     "mongodb": "^7.7.0",

@@ -29,8 +29,10 @@ const ALIASES: Record<string, string> = {
 
 const norm = (s: string) => s.toLowerCase().normalize('NFC').replace(/[\s()-]+/g, ' ').trim();
 
-export function CropPicker({ mode, lang, t, active, selected, onToggle }: {
+export function CropPicker({ mode, lang, t, active, selected, onToggle, suffix = '' }: {
   mode: 'browse' | 'select';
+  /** browse mode: '' opens the crop's prices, '/analysis' its analysis. */
+  suffix?: string;
   lang: Lang;
   t: T;
   active: Active;
@@ -67,7 +69,7 @@ export function CropPicker({ mode, lang, t, active, selected, onToggle }: {
     );
     const cls = `crop${big ? ' big' : ''}${a ? '' : ' inactive'}`;
     return mode === 'browse'
-      ? <Link key={c.slug} href={`/${c.slug}`} className={cls}>{body}</Link>
+      ? <Link key={c.slug} href={`/${c.slug}${suffix}`} className={cls}>{body}</Link>
       : <button key={c.slug} type="button" className={cls} aria-pressed={fav} onClick={() => onToggle?.(c.slug)}>{body}</button>;
   };
 

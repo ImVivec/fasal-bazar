@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { shapeArrivals, totalByWeek, weekOf } from '@/lib/arrivals-core';
+import { shapeArrivals, shapeMonthlyArrivals, totalByWeek, totalSeries, weekOf } from '@/lib/arrivals-core';
 import { fromDay, toDay } from '@/lib/dates';
 import type { DailyDoc } from '@/lib/db';
 
@@ -45,5 +45,21 @@ describe('shapeArrivals', () => {
   });
   it('handles no data', () => {
     expect(shapeArrivals([], () => undefined).weeks).toEqual([]);
+  });
+});
+
+describe('shapeMonthlyArrivals', () => {
+  it('aligns mandis on sorted months; old summaries without arrivals count as 0 t', () => {
+    const docs = [
+      { _id: '13:2026-08', m: { 2097: [5000, 20, 100] as [number, number, number], 634: [6000, 5] as [number, number] } },
+      { _id: '13:2026-07', m: { 2097: [4000, 10, 50] as [number, number, number], 9999: [1, 1, 1] as [number, number, number] } },
+    ];
+    const d = shapeMonthlyArrivals(docs, (id) => (id === 2097 ? 1 : id === 634 ? 2 : undefined));
+    expect(d.months).toEqual([toDay('2026-07-01'), toDay('2026-08-01')]);
+    expect(d.mandis.find((m) => m.id === 2097)).toMatchObject({ d: 1, t: [50, 100], p: [4000, 5000] });
+    expect(d.mandis.find((m) => m.id === 634)).toMatchObject({ d: 2, t: [0, 0], p: [null, 6000] });
+    expect(d.mandis.some((m) => m.id === 9999)).toBe(false); // not in the code list
+    const all = totalSeries(d.months.length, d.mandis, () => true);
+    expect(all.t).toEqual([50, 100]);
   });
 });

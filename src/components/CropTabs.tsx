@@ -1,7 +1,8 @@
 'use client';
 // Tab row at the top of crop/analysis pages: "All crops" first, then the farmer's own crops.
 // The current crop is always shown (highlighted), even if it isn't a favourite.
-// `suffix` keeps the farmer on the same kind of page ("" = prices, "/analysis" = analysis).
+// `suffix` keeps the farmer on the same kind of page ("" = prices, "/analysis" = analysis);
+// "All crops" likewise opens the crop list for that section (/ or /analysis).
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { CROPS } from '@/lib/master';
@@ -36,7 +37,7 @@ export function CropTabs({ current, suffix = '', lang, allLabel }: { current: st
 
   return (
     <nav className="crop-tabs" aria-label={allLabel}>
-      <Link href="/" className="ctab ctab-all"><GridIcon /><span>{allLabel}</span></Link>
+      <Link href={suffix ? `/analysis` : '/'} className="ctab ctab-all"><GridIcon /><span>{allLabel}</span></Link>
       <div className="crop-tabs-row" ref={row}>
         {crops.map((c) => (
           <Link key={c.slug} href={`/${c.slug}${suffix}`} className="ctab" aria-current={c.slug === current ? 'page' : undefined}>

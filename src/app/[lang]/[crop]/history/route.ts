@@ -5,7 +5,7 @@ import { CROPS } from '@/lib/master';
 import { getCropView } from '@/lib/prices';
 import { LANGS, type Lang } from '@/lib/session';
 
-export const revalidate = 86400;
+export const revalidate = 3600; // rebuild at most hourly, on the next visit after new data
 export const dynamicParams = false;
 
 export function generateStaticParams() {

@@ -9,7 +9,7 @@ import { dict, nameIn } from '@/lib/strings';
 import { LANGS, type Lang } from '@/lib/session';
 import { AnalysisView } from '@/components/AnalysisView';
 
-export const revalidate = 86400;
+export const revalidate = 3600; // rebuild at most hourly, on the next visit after new data
 export const dynamicParams = false;
 
 export function generateStaticParams() {

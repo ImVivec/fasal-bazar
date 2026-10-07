@@ -10,7 +10,7 @@ import type { Lang } from '@/lib/session';
 
 const COLORS = ['#2a78d6', '#e8743b', '#1f9e74', '#c2439b', '#8f6bd6', '#b59a12', '#d64545', '#3aa3b5'];
 
-const RANGES = { '3M': 92, '1Y': 366, All: 0 } as const;
+const RANGES = { '3M': 92, '1Y': 366, '5Y': 1827, All: 0 } as const; // days back (0 = everything)
 type Range = keyof typeof RANGES;
 
 type T = { historyHint: string; mspLine: string; historyEmpty: string; monthlyAvg: string; rangeNames: string };
@@ -21,12 +21,14 @@ export function HistoryChart({ daily, monthly, msp, defaultIds, lang, t, storeKe
   storeKey: string;
 }) {
   const [range, setRange] = useSessionState<Range>('chartRange', '3M');
-  // "All" uses monthly averages (light payload); 3M/1Y use daily points.
+  // 5Y/All use monthly averages (light payload); 3M/1Y use daily points.
+  const byMonth = range === '5Y' || range === 'All';
   const series = useMemo(() => {
-    if (range === 'All') return monthly;
-    const lastDay = Math.max(0, ...daily.flatMap((s) => s.points.map((p) => p[0])));
-    return daily.map((s) => ({ ...s, points: s.points.filter((p) => p[0] > lastDay - RANGES[range]) }));
-  }, [range, daily, monthly]);
+    const src = byMonth ? monthly : daily;
+    if (!RANGES[range]) return src;
+    const lastDay = Math.max(0, ...src.flatMap((s) => s.points.map((p) => p[0])));
+    return src.map((s) => ({ ...s, points: s.points.filter((p) => p[0] > lastDay - RANGES[range]) }));
+  }, [range, byMonth, daily, monthly]);
   const names = monthly.length ? monthly : daily; // stable chip list + colours across ranges
   const defaults = (() => {
     const ids = defaultIds.filter((id) => names.some((s) => s.id === id));
@@ -37,6 +39,15 @@ export function HistoryChart({ daily, monthly, msp, defaultIds, lang, t, storeKe
   const kept = (picked ?? []).filter((id) => names.some((s) => s.id === id));
   const sel = picked === null || (!kept.length && picked.length) ? defaults : kept;
   const box = useRef<HTMLDivElement>(null);
+  // Chips: the mandis on the chart first (in the order picked), then the rest, so the selected
+  // ones are always visible at the start of the sideways-scrolling row.
+  const chipOrder = [
+    ...sel.map((id) => names.find((s) => s.id === id)).filter((s): s is (typeof names)[number] => !!s),
+    ...names.filter((s) => !sel.includes(s.id)),
+  ];
+  const chipsRow = useRef<HTMLDivElement>(null);
+  const selKey = sel.join(',');
+  useEffect(() => { chipsRow.current?.scrollTo({ left: 0 }); }, [selKey]);
   const colorOf = (id: number) => COLORS[Math.max(0, names.findIndex((s) => s.id === id)) % COLORS.length];
   const days = new Set(series.flatMap((s) => s.points.map((p) => p[0])));
 
@@ -65,11 +76,11 @@ export function HistoryChart({ daily, monthly, msp, defaultIds, lang, t, storeKe
         scales: { x: { time: true } },
         axes: [{
           ...axis,
-          // Whole days only; label as "28 Sep".
-          incrs: [1, 2, 7, 14, 30, 61, 91, 182, 365, 730].map((d) => d * 86400),
-          values: (_u, v) => v.map((s) => {
+          // Whole days only; label as "28 Sep", "Sep 26", or just the year for year-sized steps.
+          incrs: [1, 2, 7, 14, 30, 61, 91, 182, 365, 730, 1825, 3650].map((d) => d * 86400),
+          values: (_u, v, _ax, _sp, incr) => v.map((s) => {
             const iso = fromDay(Math.round(s / 86400));
-            return range === 'All' ? shortMonth(iso, lang) : shortDate(iso, lang);
+            return incr >= 365 * 86400 ? iso.slice(0, 4) : byMonth ? shortMonth(iso, lang) : shortDate(iso, lang);
           }),
         }, { ...axis, size: 52, values: (_u, v) => v.map((n) => `₹${n.toLocaleString('en-IN')}`) }],
         series: [{}, ...chosen.map((s) => ({
@@ -96,11 +107,11 @@ export function HistoryChart({ daily, monthly, msp, defaultIds, lang, t, storeKe
         {(Object.keys(RANGES) as Range[]).map((r, i) => (
           <button key={r} type="button" className="chip" aria-pressed={range === r} onClick={() => setRange(r)}>{t.rangeNames.split('|')[i]}</button>
         ))}
-        <span className="muted">{range === 'All' ? t.monthlyAvg : ''}</span>
+        <span className="muted">{byMonth ? t.monthlyAvg : ''}</span>
       </div>
       <div className="muted" style={{ marginTop: 6 }}>{t.historyHint}{msp ? ` ${t.mspLine}` : ''}</div>
-      <div className="chips">
-        {names.map((s) => (
+      <div className="chips" ref={chipsRow}>
+        {chipOrder.map((s) => (
           <button key={s.id} type="button" className="chip" aria-pressed={sel.includes(s.id)}
             style={sel.includes(s.id) ? { background: colorOf(s.id), borderColor: colorOf(s.id), color: '#fff' } : undefined}
             onClick={() => setSel(sel.includes(s.id) ? sel.filter((y) => y !== s.id) : [...sel, s.id])}>

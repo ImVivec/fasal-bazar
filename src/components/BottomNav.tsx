@@ -43,11 +43,11 @@ export function BottomNav({ t }: { t: T }) {
 
   const crop = here?.c ?? (last && CROPS.some((x) => x.slug === last) ? last : null);
   const cropsHref = crop ? `/${crop}` : '/';
-  const analysisHref = crop ? `/${crop}/analysis` : '/';
+  const analysisHref = crop ? `/${crop}/analysis` : '/analysis';
 
   const tabs: { key: keyof typeof ICONS; href: string; label: string; active: boolean }[] = [
     { key: 'crops', href: cropsHref, label: t.crops, active: path === '/' || (!!here && !here.analysis) },
-    { key: 'analysis', href: analysisHref, label: t.analysis, active: !!here?.analysis },
+    { key: 'analysis', href: analysisHref, label: t.analysis, active: path === '/analysis' || !!here?.analysis },
     { key: 'settings', href: '/settings', label: t.settings, active: path.startsWith('/settings') },
     ...(admin ? [{ key: 'admin' as const, href: '/admin', label: t.admin, active: path.startsWith('/admin') }] : []),
   ];

@@ -11,7 +11,7 @@ import { shortDate } from '@/lib/dates';
 import { dateTimeIST, rupees } from '@/lib/format';
 import { CropMarkets } from '@/components/CropMarkets';
 
-export const revalidate = 86400;
+export const revalidate = 3600; // rebuild at most hourly, on the next visit after new data
 export const dynamicParams = false;
 
 export function generateStaticParams() {
